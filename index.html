@@ -7,36 +7,200 @@
             font-family: Arial;
             text-align: center;
             background-color: #f4f4f4;
-            padding-top: 100px;
+            padding-top: 80px;
+            transition: background-color 0.5s;
         }
+
         h1 {
             color: #2c3e50;
         }
+
         button {
             padding: 10px 20px;
+            margin: 10px;
             font-size: 16px;
             background-color: blue;
             color: white;
             border: none;
             border-radius: 5px;
+            cursor: pointer;
         }
+
         button:hover {
             background-color: darkblue;
         }
+
+        input {
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        .box {
+            margin-top: 20px;
+        }
     </style>
 </head>
+
 <body>
 
-    <h1>🚀 Welcome to My Website</h1>
+    <h1>🚀 Welcome to My Advanced Website</h1>
     <p>This website is running successfully!</p>
 
-    <button onclick="showMessage()">Click Me</button>
+    <!-- Current Time -->
+    <div class="box">
+        <h3>Current Time:</h3>
+        <p id="time"></p>
+    </div>
 
-    <script>
-        function showMessage() {
-            alert("Website is working perfectly!");
+    <!-- Random Number -->
+    <div class="box">
+        <button onclick="generateRandom()">Generate Random Number</button>
+        <p id="random"></p>
+    </div>
+
+    <!-- Change Background -->
+    <div class="box">
+        <button onclick="changeColor()">Change Background Color</button>
+    </div>
+
+    <!-- Input Test -->
+    <div class="box">
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="showName()">Submit</button>
+        <p id="greeting"></p>
+    </div>
+
+<script>
+
+    // Show live time
+    function updateTime() {
+        document.getElementById("time").innerHTML = new Date().toLocaleString();
+    }
+    setInterval(updateTime, 1000);
+
+    // Generate random number
+    function generateRandom() {
+        let number = Math.floor(Math.random() * 100);
+        document.getElementById("random").innerHTML = "Random Number: " + number;
+    }
+
+    // Change background color
+    function changeColor() {
+        const colors = ["#f4f4f4", "#ffcccc", "#ccffcc", "#ccccff", "#ffffcc"];
+        let randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.body.style.backgroundColor = randomColor;
+    }
+
+    // Show name from input
+    function showName() {
+        let name = document.getElementById("nameInput").value;
+        document.getElementById("greeting").innerHTML = "Hello, " + name + " 👋";
+    }
+
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Website</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding-top: 80px;
+            transition: background-color 0.5s;
         }
-    </script>
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        .box {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🚀 Welcome to My Advanced Website</h1>
+    <p>This website is running successfully!</p>
+
+    <!-- Current Time -->
+    <div class="box">
+        <h3>Current Time:</h3>
+        <p id="time"></p>
+    </div>
+
+    <!-- Random Number -->
+    <div class="box">
+        <button onclick="generateRandom()">Generate Random Number</button>
+        <p id="random"></p>
+    </div>
+
+    <!-- Change Background -->
+    <div class="box">
+        <button onclick="changeColor()">Change Background Color</button>
+    </div>
+
+    <!-- Input Test -->
+    <div class="box">
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="showName()">Submit</button>
+        <p id="greeting"></p>
+    </div>
+
+<script>
+
+    // Show live time
+    function updateTime() {
+        document.getElementById("time").innerHTML = new Date().toLocaleString();
+    }
+    setInterval(updateTime, 1000);
+
+    // Generate random number
+    function generateRandom() {
+        let number = Math.floor(Math.random() * 100);
+        document.getElementById("random").innerHTML = "Random Number: " + number;
+    }
+
+    // Change background color
+    function changeColor() {
+        const colors = ["#f4f4f4", "#ffcccc", "#ccffcc", "#ccccff", "#ffffcc"];
+        let randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.body.style.backgroundColor = randomColor;
+    }
+
+    // Show name from input
+    function showName() {
+        let name = document.getElementById("nameInput").value;
+        document.getElementById("greeting").innerHTML = "Hello, " + name + " 👋";
+    }
+
+</script>
 
 </body>
 </html>
